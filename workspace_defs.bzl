@@ -193,6 +193,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_dagger_compiler",
         generates_api = 1,
         processor_class = "dagger.internal.codegen.ComponentProcessor",
+        visibility = ["//visibility:public"],
         deps = [
             "%s//:com_google_dagger_dagger_compiler" % repo_name,
         ],
@@ -202,6 +203,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_android_entry_point_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.android.processor.internal.androidentrypoint.AndroidEntryPointProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -209,6 +211,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_aggregated_deps_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.processor.internal.aggregateddeps.AggregatedDepsProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -216,6 +219,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_alias_of_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.processor.internal.aliasof.AliasOfProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -223,6 +227,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_define_component_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.processor.internal.definecomponent.DefineComponentProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -230,6 +235,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_early_entry_points_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.processor.internal.earlyentrypoint.EarlyEntryPointProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -237,6 +243,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_generates_root_input_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.processor.internal.generatesrootinput.GeneratesRootInputProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -244,6 +251,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_originating_element_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.processor.internal.originatingelement.OriginatingElementProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -251,6 +259,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_root_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.processor.internal.root.RootProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -258,6 +267,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_component_tree_deps_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.processor.internal.root.ComponentTreeDepsProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -265,6 +275,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_view_model_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.android.processor.internal.viewmodel.ViewModelProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -290,6 +301,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_bind_value_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.android.processor.internal.bindvalue.BindValueProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -297,6 +309,7 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_custom_test_application_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.android.processor.internal.customtestapplication.CustomTestApplicationProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
 
@@ -304,5 +317,6 @@ def hilt_android_rules(repo_name = "@maven"):
         name = "hilt_uninstall_modules_processor",
         generates_api = 1,
         processor_class = "dagger.hilt.processor.internal.uninstallmodules.UninstallModulesProcessor",
+        visibility = ["//visibility:public"],
         deps = ["%s//:com_google_dagger_hilt_android_compiler" % repo_name],
     )
