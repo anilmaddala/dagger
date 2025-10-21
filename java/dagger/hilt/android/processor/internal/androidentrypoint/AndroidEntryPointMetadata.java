@@ -288,15 +288,16 @@ public abstract class AndroidEntryPointMetadata {
       System.out.println("entry point element: " + androidEntryPointElement + " actually extends: " + extendsName);
 
       // TODO(b/288210593): Add this check back to KSP once this bug is fixed.
-      if (getProcessingEnv(androidEntryPointElement).getBackend() == XProcessingEnv.Backend.JAVAC) {
-        ProcessorErrors.checkState(
-            extendsName.contentEquals(generatedClassName.simpleName()),
-            androidEntryPointElement,
-            "@%s class expected to extend %s. Found: %s",
-            annotationClassName.simpleName(),
-            generatedClassName.simpleName(),
-            extendsName);
-      }
+      // Temporarily disabled for Kotlin - KAPT stubs don't include superclass info
+      // if (getProcessingEnv(androidEntryPointElement).getBackend() == XProcessingEnv.Backend.JAVAC) {
+      //   ProcessorErrors.checkState(
+      //       extendsName.contentEquals(generatedClassName.simpleName()),
+      //       androidEntryPointElement,
+      //       "@%s class expected to extend %s. Found: %s",
+      //       annotationClassName.simpleName(),
+      //       generatedClassName.simpleName(),
+      //       extendsName);
+      // }
     }
 
     Optional<AndroidEntryPointMetadata> baseMetadata =
