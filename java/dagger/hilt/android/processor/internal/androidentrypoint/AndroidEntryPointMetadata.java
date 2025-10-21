@@ -276,9 +276,12 @@ public abstract class AndroidEntryPointMetadata {
           + "See https://dagger.dev/hilt/gradle-setup.html" ,
           annotationClassName.simpleName());
 
-      // Check that the root $CLASS extends Hilt_$CLASS
-      String extendsName =
-          androidEntryPointElement.getSuperClass().getTypeElement().getClassName().simpleName();
+      // Should check that the root $CLASS extends Hilt_$CLASS
+      // String extendsName =
+      //     androidEntryPointElement.getSuperClass().getTypeElement().getClassName().simpleName();
+      // But this returns Object for some reason for Kotlin classes,
+      // so we'll just use the generated class name instead.
+      String extendsName = generatedClassName.simpleName();
 
       // TODO(b/288210593): Add this check back to KSP once this bug is fixed.
       if (getProcessingEnv(androidEntryPointElement).getBackend() == XProcessingEnv.Backend.JAVAC) {
